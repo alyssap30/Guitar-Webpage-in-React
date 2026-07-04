@@ -6,20 +6,22 @@ import { Login } from './pages/Login.jsx';
 import { GuitarPage } from './pages/GuitarPage.jsx';
 import { Amppage } from './pages/Amppage.jsx';
 import { GuidePage } from './pages/GuidePage.jsx';
+import { CoursePage } from './pages/CoursePage.jsx';
 
 function App() {
   return (
     <>
-    <Routes>
-      <Route path = "/" element= {<Home/>}/>
-      <Route path = "/GuitarPage" element= {<GuitarPage/>}/>
-      <Route path = "/Login" element= {<Login/>}/>
-      <Route path = "/Amppage" element= {<Amppage/>}/>
-      <Route path = "/GuidePage" element= {<GuidePage/>}/>
-    </Routes>
-    <Footer/>
+      <Routes>
+        <Route path = "/" element= {<Home/>}/>
+        <Route path = "/GuitarPage" element= {<GuitarPage/>}/>
+        <Route path = "/Login" element= {<Login/>}/>
+        <Route path = "/Amppage" element= {<Amppage/>}/>
+        <Route path = "/GuidePage" element= {<GuidePage/>}/>
+        <Route path = "/Courses" element= {<CoursePage/>}/>
+      </Routes>
+      <Footer/>
     </>
   );
 }
 
-export default App;
+export default App; 

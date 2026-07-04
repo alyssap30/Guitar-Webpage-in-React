@@ -35,6 +35,7 @@ function Header(props) {
                 <Link style = {button} to = "/Amppage">Amplifiers</Link>
                 <Link style= {button} to = "/GuidePage"> Guide</Link>
                 <Link style = {button} to = "/Login">Login</Link>
+                <Link style = {button} to = "/Courses">Courses</Link>
             </nav>
             <hr/>
         </header>
