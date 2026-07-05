@@ -7,6 +7,8 @@ Features
 
 - Mobile Optimisation
 - Intuitive Design
+- PropTypes React Library
+- useState React Library
 
 To add 
 
