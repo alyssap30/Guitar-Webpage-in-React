@@ -1,6 +1,6 @@
 Project Overview 
 
-A website I completely whilst leatning react and it's based on a hobby of mine which is guitars.
+A website I completely whilst learning react and it's based on a hobby of mine which is guitars.
 The amps and guitars included are all from https://www.thomann.co.uk/
 
 Features
