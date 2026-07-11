@@ -11,12 +11,6 @@ export function GuidePage() {
             <Quiz/>
 
             <h2>Beginners Guide</h2>
-            <Modules modname = "Module 1" 
-            check1 = "Tuning your guitar" 
-            check2 = "Holding the guitar in the correct way" 
-            check3 = "Using a pick" 
-            check4 = "Plucking single notes"
-            check5 = "Spider exercise"/>
             
             <Modules modname = "Module 2"
             check1 = "Basic Chords (Em, A, E, D, G)"
