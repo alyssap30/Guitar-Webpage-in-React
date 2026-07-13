@@ -33,7 +33,6 @@ export function CoursePage() {
     const moduleStyle = {
         width: "90%",
         height: "40%",
-        boxSizing: "border-box",
         maxWidth: "600px",
         boxShadow: "5px 5px 5px lightgray",
         margin: "10px 10px",
