@@ -42,13 +42,13 @@ export function Course(props) {
 
     const CardStyle = {
         backgroundColor: "white",
-        width: "45%",
+        width: "90%",
         boxSizing: "border-box",
-        maxWidth: "500px",
+        maxWidth: "600px",
         boxShadow: "5px 5px 5px lightgray",
         height: "auto",
         margin: "10px 10px",
-        padding: "20px",
+        padding: "3%",
         textAlign: "center",
         borderRadius: "8px",
         display: "inline-block"};
@@ -132,8 +132,8 @@ export function Course(props) {
                 <h2>{props.name}</h2>
                 <p>{props.estimatedCompletion}</p>
                 <p style={{color: "green"}}>{percentageComplete}% Completed</p>
-                <button className = "itemButton" onClick={openLearnMore}>Learn More</button>
-                <button className = "itemButton" onClick={openContent}>Start Module</button><br>
+                <button className = "itemButton" style={{width: "45%"}} onClick={openLearnMore}>Learn More</button>
+                <button className = "itemButton" style={{width: "45%"}} onClick={openContent}>Start Module</button><br>
                 </br><br></br></div>
 
                 <div style = {LearnMoreStyle}>
