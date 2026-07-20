@@ -13,7 +13,7 @@ function Footer(){
 
     return (
         <footer className="top-bottom-elements">
-            <p>{CurrentYear} My Website</p><br/>
+            <p>{CurrentYear} My Website {CurrentYear}</p><br/>
             <button style={button}><a href = "https://www.linkedin.com/in/alyssa-p-2a0479358/" target="_blank"><img style = {icon} src = "https://img.icons8.com/color/1200/linkedin.jpg"/></a></button>
             <button style={button}><a href = "https://github.com/alyssap30" target="_blank"><img style = {icon} src = "https://cdn.iconscout.com/icon/free/png-256/free-github-logo-icon-svg-download-png-8630395.png?f=webp"/></a></button>
 
