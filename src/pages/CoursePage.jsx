@@ -5,6 +5,8 @@ import GChordImg from "../images/chordDiagrams/G-Chord.png"
 import DChordImg from "../images/chordDiagrams/D-Chord.png"
 import EmChordImg from "../images/chordDiagrams/Em-Chord.png"
 import CChordImg from "../images/chordDiagrams/C-Chord.png"
+import HoldingGuitarImg from "../images/Tips Images/HoldingGuitar.png"
+import metronomeImg from "../images/Tips Images/metronome.png"
 
 export function CoursePage() {
     const [percentageComplete1, setpercentageComplete1] = useState(0);
@@ -50,19 +52,33 @@ export function CoursePage() {
             <button id = "course1button" onClick={() => {expandWindow("course1", "course1button")}} style = {buttonStyle}>View Content</button><br/>
         </div>
             <div id = "course1" style = {{display: "none"}}>
-            <Course name = "How to Hold your Guitar + Pick"/>
-            <Course name = "Introduction to metronome Use"/>
-            <Course name = "Fretting and Pick holding tips"/>
-            <Course name = "Standard Tuning + String Names"/>
-            <Course name = "Open Chords" courseType = 'Chords' numberOfChords = "4" chords = {["G", "D", "Em", "C"]}
-            chordURL = {[GChordImg, DChordImg, EmChordImg, CChordImg]}
-            courseDescription = "G, D, Em, C"/>
 
-            <h2>Beginner: Module 1 Practice</h2>
+                <Course name = "How to Hold your Guitar" courseType = "Tips"
+                courseDescription = "Learn how to hold your guitar in the standard position and the most effective way to hold a pick"  
+                text = "A bit of background to guitar: Your picking hand is the hand that plucks/picks the string which is usually your dominant hand in everyday life. Your fretting hand is the hand that presses down the frets which is your non dominant hand."
+                    listTips = {["As seen in the picture your guitar rests on your picking hands knee", "The gutar should be placed close to your body for the best posture", "Your picking arm reaches over the top of the guitar body"]}
+                    imgURL = {HoldingGuitarImg}/>
+
+                <Course name = "Introduction to Metronome Use" courseType = "Tips"
+                courseDescription = "Learn to improve your timing with metronome practice and how to get the most out of practicing with a metronome"
+                text = "Metronomes can either be physical or online, they are a click track that even the most professional musicians use to stay in timeso its vital knowing how to use one effectively.  The picture above shows the result you get if you type metronome in the search bar"
+                listTips = {["BPM stands for beats per minute", "The standard slow BPM is around 60 BPM"]}
+                imgURL = {metronomeImg}/>
+
+                <Course name = "Fretting and Pick holding tips"
+                courseDescription = "Top tips on fretting and how the notes can be picked effectively"/>
+                <Course name = "Standard Tuning + String Names"
+                courseDescription = "The string's in letter format and easy ways to remember it + an introduction on tuning your guitar in standard tuning "/>
+
+                <Course name = "Open Chords" courseType = 'Chords' numberOfChords = "4" chords = {["G", "D", "Em", "C"]}
+                chordURL = {[GChordImg, DChordImg, EmChordImg, CChordImg]}
+                courseDescription = "The basic 4 chords that make up alot of songs: G, D, Em, C"/>
+
+            {/* <h2>Beginner: Module 1 Practice</h2>
             <Course name = "Metronome Practice"/>
             <Course name = "Spider Exercise"/>
             <Course name = "Chord Practice"/>
-            <Course name = "Song Practice"/>
+            <Course name = "Song Practice"/> */}
         </div><br/>
 
         <div className="module_style">

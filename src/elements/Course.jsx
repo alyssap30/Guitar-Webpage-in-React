@@ -1,20 +1,24 @@
 import PropTypes from "prop-types";
-import React, { use, useState } from "react";
+import React, { useState } from "react";
 
 
 export function Course(props) {
     // Variable Declaration 
-    let chordButtonArray = []
+    let chordButtonArray = [];
+    let tipsArray = []
+
+
     const [activeChordIndex, setActiveChordIndex] = useState(null);
+    const [activeDesIndex, setActiveDesIndex] = useState(null);
     // Display Variables
-    const [showMore, setShowMore] = useState(false)
-    const [viewContent, setviewContent] = useState(false)
-    const [viewExtraContent, setExtraContent] = useState(false)
+    const [showMore, setShowMore] = useState(false);
+    const [viewContent, setviewContent] = useState(false);
+    const [viewExtraContent, setExtraContent] = useState(false);
 
     function preventWindowStacking() {
-        setShowMore(false)
-        setviewContent(false)
-        setExtraContent(false)
+        setShowMore(false);
+        setviewContent(false);
+        setExtraContent(false);
     }
     // Display Manipulation of show more box
     function openLearnMore() {
@@ -47,7 +51,7 @@ export function Course(props) {
         maxWidth: "600px",
         boxShadow: "5px 5px 5px lightgray",
         height: "auto",
-        margin: "10px 10px",
+        margin: "10px",
         padding: "3%",
         textAlign: "center",
         borderRadius: "8px",
@@ -79,6 +83,8 @@ export function Course(props) {
             maxWidth: "500px",
             boxShadow: "5px 5px 5px lightgray",
             height: "auto",
+            maxHeight: "95vh",
+            overflow: "auto",
             padding: "20px",
             textAlign: "center",
             borderRadius: "8px",
@@ -95,6 +101,8 @@ export function Course(props) {
             height: "40%",
             boxSizing: "border-box",
             maxWidth: "500px",
+            maxHeight: "95vh",
+            overflow: "auto",
             boxShadow: "5px 5px 5px lightgray",
             height: "auto",
             padding: "20px",
@@ -116,15 +124,54 @@ export function Course(props) {
             backgroundColor: 'gray'
         }
 
+        const imageStyle = {
+            width: "90%"
+        }
+
 
     if (props.courseType === 'Chords') {
-        for (let i = 0; i < parseInt(props.numberOfChords); i++) {
+        for (let i = 0; i < props.numberOfChords.length; i++) {
             chordButtonArray.push (
                 <button style = {buttonStyle} 
                 onClick={() => {
+                    setActiveDesIndex(i);
                     setActiveChordIndex(i);
                     openExtraContent()}}>{props.chords[i]} Chord</button>
             )}}
+    else if (props.courseType === 'Tips' && props.listTips.length != 0) {
+        for (let i = 0; i < props.listTips.length; i++) {
+            tipsArray.push (
+                <li key ={`tip=${i}`}>{props.listTips[i]}</li>
+            )
+        }
+    }
+
+    // Declares elements for the course content box based on the course type
+    const courseContentDisplay = () => {
+        if (props.courseType === 'Chords') {
+            return (
+                <>
+                    {chordButtonArray}<br/><br/>
+                    <h3>How to Read Chord Diagrams</h3>
+                    <ol>
+                        <li>From left to right the vertical lines represent strings in the order: low E, A, D, G, B and high E</li>
+                        <li>Each horizontal line represents the fret with the thickest line being fret 0 (open string) and the filrst line being fret 1, the second horizonal line being fret 2 ect</li>
+                        <li>The circles on the verticle lines represent your finger position</li>
+                        <li>The numbers in the circle state which finger to use with a number. E.g if 1 in the circle you would use your index finger for fretting that note</li>
+                    </ol>
+                </>);
+        }
+        else if (props.courseType === 'Tips') {
+            return (
+                <>
+                <img style = {imageStyle} src = {props.imgURL}/>
+                <p>{props.text}</p>
+                <ol>{tipsArray}</ol>
+                </>);
+        }
+
+    }
+    
         
     return (
         <>
@@ -146,12 +193,13 @@ export function Course(props) {
 
                 <div style = {CourseContentStyle}>
                     <h2>{props.name}</h2>
-                    {chordButtonArray}<br/><br/>
-                    <button className = "itemButton" style={{width: "60%"}} onClick={closeContent}>Close</button>
+                    {courseContentDisplay()}
+                    <button className = "itemButton" style={{width: "35%"}} onClick={closeContent}>Close</button>
+                        <button className="itemButton" style={{width: "35%"}}>Mark as Complete</button>
                 </div>
 
                 <div style = {ExtraContentStyle}>
-                    {activeChordIndex !== null && (
+                    {activeChordIndex !== null &&(
                         <>
                         <h2>{props.chords[activeChordIndex]} Chord Diagram</h2><br/>
                         <img style = {{ width: "70%", height: "auto" }}src = {props.chordURL[activeChordIndex]} alt ={`${props.chords[activeChordIndex]} Chord Diagram`}/>
