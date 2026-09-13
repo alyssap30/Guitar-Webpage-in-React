@@ -2,6 +2,7 @@ import Header from "../elements/Header";
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, Navigate } from "react-router-dom";
 import Discover from "../elements/Discover";
+import { Quiz } from "../elements/Quiz"
 
 export function Home() {
     return (
@@ -17,6 +18,7 @@ export function Home() {
             <Discover ImageSrc = "https://learn-2-play-guitar.com/wp-content/themes/live-music/images/maingraphic.jpg"
             text = "Improve your guitar skills no matter your level"/>
 
+            <Quiz/>
         </>
     );
 }
