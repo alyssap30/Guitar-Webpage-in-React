@@ -7,6 +7,7 @@ import EmChordImg from "../images/chordDiagrams/Em-Chord.png"
 import CChordImg from "../images/chordDiagrams/C-Chord.png"
 import HoldingGuitarImg from "../images/Tips Images/HoldingGuitar.png"
 import metronomeImg from "../images/Tips Images/metronome.png"
+import pickHoldingImg from "../images/Tips Images/HoldingPick.png"
 
 export function CoursePage() {
     const [percentageComplete1, setpercentageComplete1] = useState(0);
@@ -42,7 +43,11 @@ export function CoursePage() {
             document.getElementById(buttonElement).textContent = "View Content"
         }
     }
-    
+
+    function MarkAsComplete() {
+        numberOfmodules = 6;
+        setpercentageComplete1(percentageComplete1 + 1);
+    }
     return (
         <>
         <Header page="Courses Page"/>
@@ -62,11 +67,15 @@ export function CoursePage() {
                 <Course name = "Introduction to Metronome Use" courseType = "Tips"
                 courseDescription = "Learn to improve your timing with metronome practice and how to get the most out of practicing with a metronome"
                 text = "Metronomes can either be physical or online, they are a click track that even the most professional musicians use to stay in timeso its vital knowing how to use one effectively.  The picture above shows the result you get if you type metronome in the search bar"
-                listTips = {["BPM stands for beats per minute", "The standard slow BPM is around 60 BPM"]}
+                listTips = {["BPM stands for beats per minute", "The standard slow BPM is around 60 BPM", "The standard normal speed is around 80-100 BPM", "A fast BPM is around 100+ BPM"]}
                 imgURL = {metronomeImg}/>
 
-                <Course name = "Fretting and Pick holding tips"
-                courseDescription = "Top tips on fretting and how the notes can be picked effectively"/>
+                <Course name = "Pick holding tips" courseType = "Tips"
+                courseDescription = "Top tips on fretting and how the notes can be picked effectively"
+                text = ""
+                listTips = {["The pick should always be held between your index and thumb on picking hand", "It should be placed at the end of your finger on the side", "Then grip the the other side on your pick with your thumb on top"]}
+                imgURL = {pickHoldingImg}/>
+
                 <Course name = "Standard Tuning + String Names"
                 courseDescription = "The string's in letter format and easy ways to remember it + an introduction on tuning your guitar in standard tuning "/>
 
