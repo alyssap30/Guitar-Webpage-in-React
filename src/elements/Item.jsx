@@ -7,9 +7,9 @@ export function Item(props) {
     // Styles for the amps cards
     const CardStyle = {
         backgroundColor: "white",
-        width: "80%",
+        width: "90%",
         boxSizing: "border-box",
-        maxWidth: "500px",
+        maxWidth: "450px",
         boxShadow: "5px 5px 5px lightgray",
         height: "auto",
         margin: "10px 10px",
@@ -20,7 +20,9 @@ export function Item(props) {
 
     const ImageStyle = {
         width: "80%",
-        height: "60%"};
+        height: "60%",
+        maxHeight: "300px"
+    };
     
     const Learnmorebox = {
         display: showMore ? "block" : "none",

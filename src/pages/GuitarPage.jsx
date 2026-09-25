@@ -5,62 +5,60 @@ export function GuitarPage() {
     return (
         <>
         <Header page="Guitar Page"/>
-        <div id="gibson">
+        <h2>Harley Benton</h2>
 
-          <h2>Gibson</h2>
-
-          <Item name="Gibson Les Paul" price="£1600" type = "Guitar"
-          ImageSrc = "https://m.media-amazon.com/images/I/51Bck9-Au+L.jpg" 
-          ImageAlt="Sunburst Les Paul Guitar"
+          <Item name="Harley Benton TE-90FLT VW Deluxe Series" price="£160 - £170" type = "Guitar"
+          ImageSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROTXLi06o5STVRx9tjb02wmD7OMpoeK4YSk-okvy7zFA&s=10" 
+          ImageAlt="White Telecaster with Humbuckers"
           buyurl = "https://tinyurl.com/yc7w999b"
-          spec1 = "Mahogany" spec2 = "Mahogany" spec3 = "Slim Taper" spec4 = "628mm" spec5 = "43mm Graphtech" 
-          spec6 = "Rosewood" spec7 = "Vintage Bourbon Burst" spec8 = "22" spec9 = "2 60s Burstbucker Humbuckers" 
-          spec10 = "2 Volume, 2 Tone, 3-Way Toggle Switch" spec11 = "Tune-O-Matic"/> 
+          spec1 = "Chambered Ash" spec2 = "Bolt-on maple" spec3 = "" spec4 = "628mm" spec5 = "42mm" 
+          spec6 = "Maple" spec7 = "Natural White" spec8 = "22" spec9 = "2 Roswell FLT-NI Alnico 2 humbuckers" 
+          spec10 = "1 Volume, 1 Tone, 3-Way Toggle Switch" spec11 = ""/> 
 
-          <Item name= "Gibson SG Standard" price="£1300" type = "Guitar"
-          ImageSrc = "https://r2.gear4music.com/media/60/604503/600/preview.jpg" 
-          ImageAlt=" Red SG Standard Guitar"
-          buyurl = "https://tinyurl.com/3c7u333v"
-          spec1 = "Mahogany" spec2 = "Mahogany" spec3 = "Rounded" spec4 = "628mm" spec5 = "43mm Graphtech" 
-          spec6 = "Rosewood" spec7 = "Heritage Cherry" spec8 = "22" spec9 = "2 Humbuckers" 
+          <Item name= "Harley Benton SC-500 WH Vintage Series" price="£140 - £150" type = "Guitar"
+          ImageSrc = "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_36/362634/21608424_800.jpg" 
+          ImageAlt= "White Les Paul"
+          buyurl = "https://www.thomann.co.uk/harley_benton_sc_500_wh_vintage_series.htm"
+          spec1 = "Poplar" spec2 = "Set-in Maple" spec3 = "C" spec4 = "628mm" spec5 = "43mm" 
+          spec6 = "Roseacer" spec7 = "White" spec8 = "22" spec9 = "2 Vintage-style Humbuckers" 
           spec10 = "2 Volume, 2 Tone, 3-Way Toggle Switch" spec11 = "Tune-O-Matic"/>
 
-          <Item name= "Gibson 80s Explorer" price="£1900" type = "Guitar"
-          ImageSrc = "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_56/561980/18040512_800.jpg" 
-          ImageAlt = "Black 80s Explorer Guitar"
-          buyurl = "https://tinyurl.com/4fxnc3t8"
-          spec1 = "Mahogany" spec2 = "Mahogany" spec3 = "Slim Taper" spec4 = "628mm" spec5 = "43mm Graphtech" 
-          spec6 = "Rosewood" spec7 = "Black Ebony" spec8 = "22" spec9 = "2 80s Tribute Humbuckers" 
-          spec10 = "2 Volume, 1 Tone, 3-Way Toggle Switch" spec11 = "Tune-O-Matic"/>
-        </div>
+          <Item name= "Harley Benton MS-60LH VW Vintage Series" price="£130 - £150" type = "Guitar"
+          ImageSrc = "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_33/339362/16907350_800.jpg" 
+          ImageAlt = "White Mustang Guitar"
+          buyurl = "https://www.thomann.co.uk/harley_benton_ms_60_vw_ltd_edition.htm"
+          spec1 = "Basswood" spec2 = "Bolt-on Maple" spec3 = "" spec4 = "610mm" spec5 = "42mm Graphite" 
+          spec6 = "Amaranth" spec7 = "Vintage White" spec8 = "22" spec9 = "2 Rosewell STA Alnico-5 vintage style single coils" 
+          spec10 = "1 Volume, 1 Tone, On and off Slider for pickups" spec11 = "Tune-O-Matic"/>
 
-        <div id="fender">
-          <h2>Fender</h2>
+        
+          <h2>Headless Guitars</h2>
 
-          <Item name= "Fender Stratocaster" price="£500" type = "Guitar"
-          ImageSrc = "https://m.media-amazon.com/images/I/61Z01+68f8L.jpg"
-          ImageAlt = "Sunburst Stratocaster Guitar"
-          buyurl = "https://tinyurl.com/msermru9"
-          spec1 = "Poplar" spec2 = "Maple" spec3 = "Modern C" spec4 = "648mm" spec5 = "42.86mm Micarta" 
-          spec6 = "Rosewood" spec7 = "3 Colour Sunburst" spec8 = "21" spec9 = "3 Single-Coil Pickups" 
-          spec10 = "1 Master Volume, 2 Tone, 5-Way Switch" spec11 = "Vintage-Style Synchronized Tremolo"/>
+          <div className='guitarContainer'>
+            <Item name= "Hils Next HN5 Headless" price="£350 - £550" type = "Guitar"
+            ImageSrc = "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_60/608734/20492331_800.jpg"
+            ImageAlt = "Black Hils Headless guitar"
+            buyurl = "https://www.thomann.co.uk/hils_next_hn5_black.htm?gad_source=1&gad_campaignid=1581403900&gbraid=0AAAAADuDMCUAoX_d1xhGfBbHEBgsBFAbi&gclid=Cj0KCQjw5bjVBhCiARIsAJzMVnT9yPkhaqp_7Z1twzsdfN2alQm30ymAdsdmGwdlXu13GS_io3oqofYaAtsiEALw_wcB"
+            spec1 = "Mahogany" spec2 = "Bolt-on Roasted Maple" spec3 = "Slim C" spec4 = "648mm" spec5 = "42mm Bone" 
+            spec6 = "Rosewood" spec7 = "Satin Black" spec8 = "24" spec9 = "2 Hils Active Humbuckers" 
+            spec10 = "1 Volume, 1 Tone, 3-Way Switch" spec11 = "Alchemy Headless Tremolo"/>
 
-          <Item name= "Fender Telecaster" price="£700" type = "Guitar"
-          ImageSrc = "https://rvb-img.reverb.com/image/upload/s--bJ5OwHUj--/t_card-square/v1529421711/r8befer5k6tuhp1fhts0.png"
-          ImageAlt = "Yellow Telecaster Guitar"
-          buyurl = "https://tinyurl.com/48zuxkvr"
-          spec1 = "Ash" spec2 = "Maple" spec3 = "Modern C" spec4 = "648mm" spec5 = "42mm Synthetic Bone" 
-          spec6 = "Maple" spec7 = "Butterscotch Blonde" spec8 = "22" spec9 = "2 Single-Coil Pickups" 
-          spec10 = "1 Master Volume, 1 Master Tone, 3-Way Switch" spec11 = "6-Saddle String-Through-Body Hardtail"/>
+            <Item name= "Fender Telecaster" price="£700" type = "Guitar"
+            ImageSrc = "https://rvb-img.reverb.com/image/upload/s--bJ5OwHUj--/t_card-square/v1529421711/r8befer5k6tuhp1fhts0.png"
+            ImageAlt = "Yellow Telecaster Guitar"
+            buyurl = "https://tinyurl.com/48zuxkvr"
+            spec1 = "Ash" spec2 = "Maple" spec3 = "Modern C" spec4 = "648mm" spec5 = "42mm Synthetic Bone" 
+            spec6 = "Maple" spec7 = "Butterscotch Blonde" spec8 = "22" spec9 = "2 Single-Coil Pickups" 
+            spec10 = "1 Master Volume, 1 Master Tone, 3-Way Switch" spec11 = "6-Saddle String-Through-Body Hardtail"/>
 
-          <Item name= "Fender Mustang" price="£600" type = "Guitar"
-          ImageSrc = "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_59/595119/19262898_800.jpg"
-          ImageAlt = "Blue Mustang Guitar"
-          buyurl= "https://tinyurl.com/36fdfbkx"
-          spec1 = "Alder" spec2 = "Maple" spec3 = "Modern C" spec4 = "609mm" spec5 = "42mm Synthetic Bone" 
-          spec6 = "Rosewood" spec7 = "Aquatone Blue" spec8 = "22" spec9 = "2 Single-Coil Pickups" 
-          spec10 = "1 Master Volume, 1 Master Tone, 3-Way Switch" spec11 = "6-Saddle String-Through-Body Hardtail"/>
-        </div>
+            <Item name= "Fender Mustang" price="£600" type = "Guitar"
+            ImageSrc = "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_59/595119/19262898_800.jpg"
+            ImageAlt = "Blue Mustang Guitar"
+            buyurl= "https://tinyurl.com/36fdfbkx"
+            spec1 = "Alder" spec2 = "Maple" spec3 = "Modern C" spec4 = "609mm" spec5 = "42mm Synthetic Bone" 
+            spec6 = "Rosewood" spec7 = "Aquatone Blue" spec8 = "22" spec9 = "2 Single-Coil Pickups" 
+            spec10 = "1 Master Volume, 1 Master Tone, 3-Way Switch" spec11 = "6-Saddle String-Through-Body Hardtail"/>
+          </div>
 
         <div id="ibanez">
           <h2>Ibanez</h2>

@@ -58,7 +58,17 @@ body {
   border-radius: 8px;
   display: inline-block;
 }
-@media (max-width: 600px) {
+
+.guitarContainer {
+  display: flex;
+  width: 90%;
+  margin: 3%;
+  justify-items: center;
+  align-content: center;
+  flex-direction: row;
+}
+
+@media (max-width: 1000px) {
   body {
     padding: 10px;
   }
@@ -68,10 +78,14 @@ body {
     font-size: 16px;
   }
 
-  .GuitarButton {
-    width: 40%;
-    font-size: 14px;
+  .itemButton {
+    width: 80%;
+    font-size: 16px;
     display: inline-block;
+  }
+
+  .guitarContainer {
+    flex-direction: column;
   }
 }
 

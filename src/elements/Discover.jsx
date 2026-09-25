@@ -19,6 +19,7 @@ export default function Discover(props) {
     const Image = {
         width: "80%",
         height: "40%",
+        maxHeight: "200px",
         objectFit: "cover",
         borderRadius: "8px",
     }
