@@ -321,27 +321,13 @@ export function Quiz() {
     const intermediateper = Math.round((intermediate / 6) * 100 * 100) / 100;;
     const advancedper = Math.round((advanced / 6) * 100 * 100) / 100;
 
-    const Button = {
-        padding: "6px 30px",
-        backgroundColor: "rgba(59, 71, 71, 0.55)",
-        boxShadow: "1px 2px 2px rgb(178, 178, 178)",
-        border: "1px solid black",
-        fontSize: "14px",
-        color: "white",
-        border: "none",
-        margin: "0px 2px auto",
-        borderRadius: "5px",
-        textDecoration: "none",
-        transition: "0.3s ease",
-        cursor: "pointer"}
-
     return (
         <>
         <div id = "startbox" style = {Box}>
             <h3>Quiz to check your guitar skills</h3><br/>
             <p>(Please answer to the best of your ability)</p>
             
-            <button style = {Button} onClick ={Start}>Take Quiz</button>
+            <button className="quizButton" onClick ={Start}>Take Quiz</button>
         </div><br/>
 
 
@@ -360,8 +346,8 @@ export function Quiz() {
                 I can compose a rhythm guitar piece</label><br/><br/><br/>
             
             <div style = {{textAlign: "center"}}>
-                <button style = {Button} onClick= {exitQ1}>Exit</button>
-                <button style = {Button} onClick = {Q1}>Next Question</button>
+                <button className="quizButton" onClick= {exitQ1}>Exit</button>
+                <button className="quizButton" onClick = {Q1}>Next</button>
             </div>
         </div>
 
@@ -381,8 +367,8 @@ export function Quiz() {
 
             
             <div style = {{textAlign: "center"}}>
-                <button style = {Button} onClick= {exitQ2}>Exit</button>
-                <button style = {Button} onClick = {Q2}>Next Question</button>
+                <button className="quizButton" onClick= {exitQ2}>Exit</button>
+                <button className="quizButton" onClick = {Q2}>Next</button>
             </div>
         </div>
 
@@ -399,8 +385,8 @@ export function Quiz() {
                 I know my way around the fretboard in every key</label><br/><br/><br/>
 
             <div style = {{textAlign: "center"}}>
-                <button style = {Button} onClick= {exitQ3}>Exit</button>
-                <button style = {Button} onClick = {Q3}>Next Question</button>
+                <button className="quizButton" onClick= {exitQ3}>Exit</button>
+                <button className="quizButton" onClick = {Q3}>Next Question</button>
             </div>
         </div>
 
@@ -419,8 +405,8 @@ export function Quiz() {
                 I can keep in time all the time</label><br/><br/><br/>
 
             <div style = {{textAlign: "center"}}>
-                <button style = {Button} onClick= {exitQ4}>Exit</button>
-                <button style = {Button} onClick = {Q4}>Next Question</button>
+                <button className="quizButton" onClick= {exitQ4}>Exit</button>
+                <button className="quizButton" onClick = {Q4}>Next</button>
             </div>
         </div>
 
@@ -466,8 +452,8 @@ export function Quiz() {
                 Fast licks in 16th notes</label><br/><br/><br/>
 
             <div style = {{textAlign: "center"}}>
-                <button style = {Button} onClick = {exitQ5}>Exit</button>
-                <button style = {Button} onClick = {Q5}>Next Question</button>
+                <button className="quizButton" onClick = {exitQ5}>Exit</button>
+                <button className="quizButton" onClick = {Q5}>Next</button>
             </div>
         </div>
 
@@ -495,7 +481,7 @@ export function Quiz() {
                 Sweep Picking</label><br/><br/>
 
             <div style = {{textAlign: "center"}}>  
-                <button style = {Button} onClick = {CalcResult}>Calculate Result</button>
+                <button className="quizButton" onClick = {CalcResult}>Calculate Result</button>
             </div>
         </div>
 
@@ -506,7 +492,7 @@ export function Quiz() {
             <p>You are {intermediateper}% Intermediate</p>
             <p>You are {advancedper}% Advanced</p>
             <div style = {{textAlign: "center"}}>
-                <button style = {Button} onClick={StartAgain}>Start Again</button>
+                <button className="quizButton" onClick={StartAgain}>Start Again</button>
             </div>
         </div>
         </>

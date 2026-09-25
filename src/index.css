@@ -7,8 +7,13 @@ body {
     overflow-x: hidden;
 }
 
+h1, h2, h3 {
+  color: #1F2937;
+}
+
 .top-bottom-elements {
-    background-color: rgb(212, 224, 224);
+    background-color: rgb(124, 198, 198);
+    color: #f4f4f4;
     padding: 10px 0;
     width: 100%;
     text-align: center}
@@ -68,6 +73,21 @@ body {
   flex-direction: row;
 }
 
+.quizButton {
+  width: 40%;
+  background-color: rgba(59, 71, 71, 0.55);
+  font-size: 18px;
+  box-shadow: 1px 2px 2px rgb(178, 178, 178);
+  border: 1px solid black;
+  color: white;
+  border: none;
+  margin: 0px 2px auto;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  cursor: pointer
+}
+
 @media (max-width: 1000px) {
   body {
     padding: 10px;
@@ -87,5 +107,10 @@ body {
   .guitarContainer {
     flex-direction: column;
   }
+
+  .quizButton {
+    width: 45%;
+  }
+
 }
 

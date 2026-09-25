@@ -4,8 +4,7 @@ export default function Discover(props) {
 
     const box = {
         backgroundColor: "white",
-        width: "80%",
-        height: "200px",
+        width: "90%",
         boxSizing: "border-box",
         maxWidth: "500px",
         boxShadow: "5px 5px 5px lightgray",
