@@ -1,26 +1,8 @@
 import {useState} from "react";
 
 export function Quiz() {
-    const labels = {
-        textAlign: "left",
-        padding: "30px"
-    }
-    const header = {
-        textAlign: "center"
-    }
-    const Box = {
-        backgroundColor: "white",
-        width: "90%",
-        height: "40%",
-        boxSizing: "border-box",
-        maxWidth: "750px",
-        boxShadow: "5px 5px 5px lightgray",
-        margin: "10px 10px",
-        padding: "20px",
-        borderRadius: "8px",
-        display: "inline-block",
-    }
     // Question Boxs Display Manipulation
+    const [isActiveS, setIsActiveS] = useState(true);
     const [isActive1, setIsActive1] = useState(false);
     const [isActive2, setIsActive2] = useState(false);
     const [isActive3, setIsActive3] = useState(false);
@@ -29,19 +11,37 @@ export function Quiz() {
     const [isActive6, setIsActive6] = useState(false);
     const [isActiveR, setIsActiveR] = useState(false);
 
-    const questionBox = {
-        backgroundColor: "rgb(231, 231, 231)",
+    const labels = {
+        textAlign: "left",
+        padding: "30px"
+    }
+    const header = {
+        textAlign: "center"
+    }
+    const Box = {
         width: "90%",
         height: "40%",
         boxSizing: "border-box",
-        fontSize: "18px",
         maxWidth: "750px",
         boxShadow: "5px 5px 5px lightgray",
-        height: "auto",
+        margin: "10px 10px",
+        padding: "20px",
+        borderRadius: "8px",
+    }
+
+    const startingBox = {
+        ...Box,
+        backgroundColor: "white",
+        display: isActiveS ? "inline-block" : "none"
+    }
+    const questionBox = {
+        ...Box,
+        backgroundColor: "rgb(231, 231, 231)",
+        fontSize: "18px",
+        maxWidth: "750px",
         margin: "30px",
         padding: "20px 40px",
         textAlign: "left",
-        borderRadius: "8px",
     }
     const Box1 = {
         ...questionBox, 
@@ -84,6 +84,7 @@ export function Quiz() {
     }
     function Start() {
         setIsActive1(true);
+        setIsActiveS(false);
     }
     // Used as error handing incase program behaves in an unexpected manner
     function PreventWindowStacking () {
@@ -111,31 +112,37 @@ export function Quiz() {
             answerHanding(setIntermediate, intermediate);
         }
         else if (QValue === `${questionNum}d`) {
-            answerHanding(setAdvanced, advanced)
+            answerHanding(setAdvanced, advanced);
         }
         else { alert("Please Select an answer") }
     }
 
+    function exitQuiz(setCurrentWindow, setLastWindow) {
+        setCurrentWindow(false);
+        setLastWindow(true);
+    }
+
     // Question 1
     function Q1() {
-        questionHanding("1", setIsActive2)
+        questionHanding("1", setIsActive2);
     }
     function exitQ1() {
-        setIsActive1(false);
+        exitQuiz(setIsActive1, setIsActiveS);
     }
     // Question 2
     function Q2() {
         questionHanding("2", setIsActive3)
     }
     function exitQ2() {
-        setIsActive2(false);
+        exitQuiz(setIsActive2, setIsActive1);
     }
     //Question 3
     function Q3() {
         questionHanding("3", setIsActive4)
     }
+
     function exitQ3() {
-        setIsActive3(false);
+        exitQuiz(setIsActive3, setIsActive2);
     }
 
     // Question 4
@@ -144,7 +151,7 @@ export function Quiz() {
     }
 
     function exitQ4() {
-        setIsActive4(false);
+        exitQuiz(setIsActive4, setIsActive3);
     }
 
     // Question 5
@@ -231,21 +238,22 @@ export function Quiz() {
         else if (Q5Number < 8) {
             setAdvanced(advanced + 1);
             setIsActive5(false);
-            setIsActive6(true)}
-        else if (Q5Number >= 4) {
-            setBeginner(beginner + 1);
-            setIsActive5(false);
-            setIsActive6(true);
+            setIsActive6(true)
         }
         else if (Q5Number < 4) {
             setIntermediate(intermediate + 1);
             setIsActive5(false);
             setIsActive6(true);
         }
+        else if (Q5Number < 2) {
+            setBeginner(beginner + 1);
+            setIsActive5(false);
+            setIsActive6(true);
+        }
     }
 
     function exitQ5() {
-        setIsActive5(false);
+        exitQuiz(setIsActive5, setIsActive4);
     }
     
     //Question 6
@@ -293,24 +301,24 @@ export function Quiz() {
             setIsActive6(false);
             setIsActiveR(true);
         }
-        else if (Q6Number < 0) {
-            setBeginner(beginner + 1);
+         else if (Q6Number < 4) {
+            setAdvanced(advanced + 1)
             setIsActive6(false);
             setIsActiveR(true);
         }
-        else if (Q6Number < 2 && Q6Number) {
+        else if (Q6Number < 2) {
             setIntermediate(intermediate + 1);
             setIsActive6(false);
             setIsActiveR(true);
         }
-        else if (Q6Number < 4) {
-            setAdvanced(advanced + 1)
+        else if (Q6Number < 0) {
+            setBeginner(beginner + 1);
             setIsActive6(false);
-            setIsActiveR(true);}}
+            setIsActiveR(true);
+        }}
 
     function StartAgain() {
-        setIsActive2(true);
-        setIsActiveR(false);
+        exitQuiz(setIsActiveR, setIsActiveS);
         setBeginner(0);
         setIntermediate(0);
         setAdvanced(0);
@@ -323,7 +331,7 @@ export function Quiz() {
 
     return (
         <>
-        <div id = "startbox" style = {Box}>
+        <div id = "startbox" style = {startingBox}>
             <h3>Quiz to check your guitar skills</h3><br/>
             <p>(Please answer to the best of your ability)</p>
             
@@ -356,18 +364,18 @@ export function Quiz() {
             <label style = {labels}><input type = "radio" name = "q2" onChange={handleChange} value = "2a"/>
                 I have little to no scale knowledge</label><br/><br/>
             
-            <label style = {labels}><input type = "radio" name = "q2" onChange={handleChange} value = "2a"/>
+            <label style = {labels}><input type = "radio" name = "q2" onChange={handleChange} value = "2b"/>
                 I know the basic pentatonic and/or major scale</label><br/><br/>
 
-            <label style = {labels}><input type = "radio" name = "q2" onChange={handleChange} value = "2b"/>
+            <label style = {labels}><input type = "radio" name = "q2" onChange={handleChange} value = "2c"/>
                 I can play the major and pentonic scale in CAGED</label><br/><br/>
 
-            <label style = {labels}><input type = "radio" name = "q2" onChange={handleChange} value = "2c"/>
+            <label style = {labels}><input type = "radio" name = "q2" onChange={handleChange} value = "2d"/>
                 I know all the 7 modes in every key</label><br/><br/><br/>
 
             
             <div style = {{textAlign: "center"}}>
-                <button className="quizButton" onClick= {exitQ2}>Exit</button>
+                <button className="quizButton" onClick= {exitQ2}>Back</button>
                 <button className="quizButton" onClick = {Q2}>Next</button>
             </div>
         </div>
@@ -377,16 +385,19 @@ export function Quiz() {
             <h3 style = {header}>Question 3</h3>
             <label style = {labels}><input type = "radio" name = "q3" onChange={handleChange} value = "3a"/>
                 What's improvisation</label><br/><br/>
-
+            
             <label style = {labels}><input type = "radio" name = "q3" onChange={handleChange} value = "3b"/>
-                I can piece together basic licks</label><br/><br/>
+                I can play variations of a scale up and down</label><br/><br/>
 
             <label style = {labels}><input type = "radio" name = "q3" onChange={handleChange} value = "3c"/>
+                I can piece together basic licks</label><br/><br/>
+
+            <label style = {labels}><input type = "radio" name = "q3" onChange={handleChange} value = "3d"/>
                 I know my way around the fretboard in every key</label><br/><br/><br/>
 
             <div style = {{textAlign: "center"}}>
-                <button className="quizButton" onClick= {exitQ3}>Exit</button>
-                <button className="quizButton" onClick = {Q3}>Next Question</button>
+                <button className="quizButton" onClick= {exitQ3}>Back</button>
+                <button className="quizButton" onClick = {Q3}>Next</button>
             </div>
         </div>
 
@@ -398,14 +409,14 @@ export function Quiz() {
             <label style = {labels}><input type = "radio" name = "q4" onChange={handleChange} value = "4b"/>
                 I regularly practice with a metromnome and can keep in time with it</label><br/><br/>
 
-            <label style = {labels}><input type = "radio" name = "q4" onChange={handleChange} value = "4b"/>
+            <label style = {labels}><input type = "radio" name = "q4" onChange={handleChange} value = "4c"/>
                 I can keep in time on-beat but often can't off-beat</label><br/><br/>
 
-            <label style = {labels}><input type = "radio" name = "q4" onChange={handleChange} value = "4c"/>
+            <label style = {labels}><input type = "radio" name = "q4" onChange={handleChange} value = "4d"/>
                 I can keep in time all the time</label><br/><br/><br/>
 
             <div style = {{textAlign: "center"}}>
-                <button className="quizButton" onClick= {exitQ4}>Exit</button>
+                <button className="quizButton" onClick= {exitQ4}>Back</button>
                 <button className="quizButton" onClick = {Q4}>Next</button>
             </div>
         </div>
@@ -452,7 +463,7 @@ export function Quiz() {
                 Fast licks in 16th notes</label><br/><br/><br/>
 
             <div style = {{textAlign: "center"}}>
-                <button className="quizButton" onClick = {exitQ5}>Exit</button>
+                <button className="quizButton" onClick = {exitQ5}>Back</button>
                 <button className="quizButton" onClick = {Q5}>Next</button>
             </div>
         </div>

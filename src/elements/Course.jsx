@@ -9,11 +9,18 @@ export function Course(props) {
 
     const [activeChordIndex, setActiveChordIndex] = useState(null);
     const [activeDesIndex, setActiveDesIndex] = useState(null);
+    // Text Content
+    const [nextButtonContent, setNextBtnContent] = useState("Next");
+    const [backBtnContent, setBackBtnContent] = useState("Close");
+
     // Display Variables
     const [showMore, setShowMore] = useState(false);
     const [viewContent, setviewContent] = useState(false);
+    const [viewSteps, setViewSteps] = useState(true);
+    const [viewSummary, setViewSummary] = useState(false);
+
     const [viewExtraContent, setExtraContent] = useState(false);
-    const [progressTxtColor, setProgressTxtColor] = useState("red")
+    const [progressTxtColor, setProgressTxtColor] = useState("red");
 
     // Styles for the cards
     const [progress, setProgress] = useState("Not Started");
@@ -29,19 +36,13 @@ export function Course(props) {
         padding: "3%",
         textAlign: "center",
         borderRadius: "8px",
-        display: "inline-block"};
-    
+        display: "inline-block"
+    };
     const LearnMoreStyle = {
-        backgroundColor: "white",
-        width: "90%",
+        ...CardStyle,
         height: "40%",
-        boxSizing: "border-box",
-        maxWidth: "500px",
-        boxShadow: "5px 5px 5px lightgray",
-        height: "auto",
+        maxWidth: "550px",
         padding: "20px",
-        textAlign: "center",
-        borderRadius: "8px",
         position: "fixed",
         top: "50%",
         left: "49.5%",
@@ -50,35 +51,29 @@ export function Course(props) {
         display: showMore ? "inline-block" : "none"};
 
     const CourseContentStyle = {
-        backgroundColor: "white",
-        width: "90%",
-        height: "40%",
-        boxSizing: "border-box",
-        maxWidth: "500px",
-        boxShadow: "5px 5px 5px lightgray",
-        height: "auto",
-        maxHeight: "90vh",
-        padding: "20px",
-        textAlign: "center",
-        borderRadius: "8px",
-        position: "fixed",
-        top: "50%",
-        left: "49.5%",
-        transform: "translate(-50%, -50%)",
-        zIndex: "1000",
+        ...LearnMoreStyle,
         display: viewContent ? "flex" : "none",
-        flexDirection: "column"
+        flexDirection: "column",
     };
         
     const staticContent = {
-        flexShrink: 0, // Prevents headers/footers from squishing
+        flexShrink: 0, 
     };
-
-    const scrollContent = {
-        flex: 1, // Takes up remaining middle space
-        overflowY: "auto", // Enables vertical scrolling
-        margin: "10px 0",
+    const middleContent = {
+        flex: 1, 
+        overflowY: "auto",
+        margin: "0",
+        flexDirection: "column",
+        minHeight: "130px"
+    }
+    const stepToStepBox = {
+        ...middleContent,
+        display: viewSteps ? "flex" : "none"
     };
+    const summaryBox = {
+        ...middleContent,
+        display: viewSummary ? "flex" : "none"
+    }
 
     const ExtraContentStyle = {
         backgroundColor: "white",
@@ -137,21 +132,45 @@ export function Course(props) {
         setProgress("Started")
         setProgressTxtColor("#beb062")
     }
-    function closeContent() {
-        setviewContent(false)}
 
     // Display Manipulation of extra content box
     function openExtraContent() {
         preventWindowStacking()
-        setExtraContent(true)} // Remembers which chord was selected
+        setExtraContent(true)
+    } // Remembers which chord was selected
     function closeExtraContent() {
-        setExtraContent(false)}
+        setExtraContent(false)
+    }
 
     // Completed Module Function
-    function markAsComplete() {
-        setProgress("Completed");
-        setviewContent(false);
-        setProgressTxtColor("green")
+    function nextBtn() {
+        if (nextButtonContent === "Next") {
+            setViewSteps(false);
+            setViewSummary(true);
+            setNextBtnContent("Mark as Complete");
+            setBackBtnContent('Back')
+
+        }
+        else if (nextButtonContent == "Mark as Complete") {
+            setViewSteps(true);
+            setViewSummary(false);
+            setNextBtnContent("Next");
+            setBackBtnContent('Close')
+            setProgress("Completed");
+            setviewContent(false);
+            setProgressTxtColor("green");
+        }
+    }
+    function closeBtn() {
+        if (backBtnContent === 'Close') {
+            setviewContent(false)
+        }
+        if (backBtnContent === 'Back') {
+            setViewSteps(true);
+            setViewSummary(false);
+            setNextBtnContent("Next");
+            setBackBtnContent('Close')
+        }
     }
 
     if (props.courseType === 'Chords') {
@@ -190,12 +209,11 @@ export function Course(props) {
             return (
                 <>
                 <img style = {imageStyle} src = {props.imgURL}/>
-                <p>{props.text}</p>
                 <ol>{tipsArray}</ol>
                 </>);
         }
-
     }
+
     
         
     return (
@@ -220,13 +238,16 @@ export function Course(props) {
                     <div style={staticContent}>
                         <h2>{props.name}</h2>
                     </div>
-                    <div style ={scrollContent}>
+                    <div style ={stepToStepBox}>
                         {courseContentDisplay()}
                     </div>
+                    <div style = {summaryBox}>
+                        <p>{props.text}</p>
+                    </div> 
                     <hr/>
                     <div style={staticContent}>
-                        <button className = "itemButton" style={{width: "35%"}} onClick={closeContent}>Close</button>
-                        <button className="itemButton" style={{width: "35%"}} onClick={markAsComplete}>Mark as Complete</button>
+                        <button className = "itemButton" style={{width: "43%"}} onClick={closeBtn}>{backBtnContent}</button>
+                        <button className="itemButton" style={{width: "50%"}} onClick={nextBtn}>{nextButtonContent}</button>
                     </div>
                 </div>
 

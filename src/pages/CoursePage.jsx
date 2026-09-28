@@ -58,8 +58,10 @@ export function CoursePage() {
         </div>
             <div id = "course1" style = {{display: "none"}}>
 
+                <Course name = "Picking vs Fretting hand introduction"/>
+
                 <Course name = "How to Hold your Guitar" courseType = "Tips"
-                courseDescription = "Learn how to hold your guitar in the standard position and the most effective way to hold a pick"  
+                courseDescription = "The first step to playing guitar at any level is of course learning how to hold the guitar in a standard way. Some guitars allow for different ways for holding them but as this stage even if your guitar allows for different ways based on its shape stick to the basics before over complicating"
                 text = "A bit of background to guitar: Your picking hand is the hand that plucks/picks the string which is usually your dominant hand in everyday life. Your fretting hand is the hand that presses down the frets which is your non dominant hand."
                 listTips = {["As seen in the picture your guitar rests on your picking hands knee", "The gutar should be placed close to your body for the best posture", "Your picking arm reaches over the top of the guitar body"]}
                 imgURL = {HoldingGuitarImg}/>

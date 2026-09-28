@@ -28,26 +28,15 @@ export function Amppage() {
             spec7 = "Digital Reverb and Delay" spec8 = "Yes" spec9 = "Must be used with a speaker cabinet"/>
 
             <h2>Fender</h2>
-            <Item name="Fender 65 Twin Reverb" price= "£1900" type = "Amp"
-            ImageSrc= "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_15/153777/12531507_800.jpg"
-            ImageAlt = "Fender 65 Twin Reverb Amplifier"
-            buyurl = "https://tinyurl.com/3dwnp3fx/"
-            spec1 = "85W" spec2 = "29 kg" spec3 = "Black" spec4 = "673 x 267 x 5050 mm" spec5 = "2 Channels" spec6 = "2x 12 inch" 
-            spec7 = "Spring reverb and tremolo" spec8 = "Yes " spec9 = "Includes tilt-back stand"/>
+            <Item/>
 
-            <Item name="Fender Champion II 100" price= "£310" type = "Amp"
-            ImageSrc= "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_59/595637/19655524_800.jpg"
-            ImageAlt= "Fender Champion II 100 Amplifier"
-            buyurl= "https://www.thomann.co.uk/fender_champion_ii_100.htm"
-            spec1 = "100W" spec2 = "18kg" spec3 = "Black" spec4 = "260 x 483 x 660 mm" spec5 = "2 Channels" spec6 = "2x 12 inch" 
-            spec7 = "Reverb, Delay, Chorus, Vibratone, Tremolo and Phaser" spec8 = "Yes" spec9 = "Built-in recorder and aux input"/>
+            <Item/>
 
-            <Item  name="Fender Mustang LT50" price= "£230" type = "Amp"
-            ImageSrc= "https://m.media-amazon.com/images/I/71VdM7iD+uL._UF1000,1000_QL80_.jpg"
-            ImageAlt= "Fender Mustang LT50 Amplifier"
-            buyurl="https://tinyurl.com/299muenz"
-            spec1 = "50W" spec2 = "9kg" spec3 = "Black" spec4 = "432 x 216 x 419 mm" spec5 = "1 Channel" spec6 = "12 inch" 
-            spec7 = "20 Amp Models and 25 Effects" spec8 = "Yes" spec9 = "60 Memory slots for saving presets"/>
+            <Item  name="Fender Mustang LT25" price= "£130 - £160" type = "Amp"
+            ImageSrc= "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_45/456903/13933481_800.jpg"
+            ImageAlt= "Fender Mustang LT25 Amplifier"
+            spec1 = "25W" spec2 = "9kg" spec3 = "432 x 216 x 419 mm" spec4 = "1" spec6 = "with"
+            spec5 = "20 Amp Models and 25 Effects"  spec7 = "60 Memory slots for saving presets"/>
         </>
     );
 }
