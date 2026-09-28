@@ -5,6 +5,9 @@ import GChordImg from "../images/chordDiagrams/G-Chord.png"
 import DChordImg from "../images/chordDiagrams/D-Chord.png"
 import EmChordImg from "../images/chordDiagrams/Em-Chord.png"
 import CChordImg from "../images/chordDiagrams/C-Chord.png"
+import HoldingGuitarImg from "../images/Tips Images/HoldingGuitar.png"
+import metronomeImg from "../images/Tips Images/metronome.png"
+import pickHoldingImg from "../images/Tips Images/HoldingPick.png"
 
 export function CoursePage() {
     const [percentageComplete1, setpercentageComplete1] = useState(0);
@@ -40,7 +43,11 @@ export function CoursePage() {
             document.getElementById(buttonElement).textContent = "View Content"
         }
     }
-    
+
+    function MarkAsComplete() {
+        numberOfmodules = 6;
+        setpercentageComplete1(percentageComplete1 + 1);
+    }
     return (
         <>
         <Header page="Courses Page"/>
@@ -50,19 +57,41 @@ export function CoursePage() {
             <button id = "course1button" onClick={() => {expandWindow("course1", "course1button")}} style = {buttonStyle}>View Content</button><br/>
         </div>
             <div id = "course1" style = {{display: "none"}}>
-            <Course name = "How to Hold your Guitar + Pick"/>
-            <Course name = "Introduction to metronome Use"/>
-            <Course name = "Fretting and Pick holding tips"/>
-            <Course name = "Standard Tuning + String Names"/>
-            <Course name = "Open Chords" courseType = 'Chords' numberOfChords = "4" chords = {["G", "D", "Em", "C"]}
-            chordURL = {[GChordImg, DChordImg, EmChordImg, CChordImg]}
-            courseDescription = "G, D, Em, C"/>
 
-            <h2>Beginner: Module 1 Practice</h2>
+                <Course name = "Picking vs Fretting hand introduction"/>
+
+                <Course name = "How to Hold your Guitar" courseType = "Tips"
+                courseDescription = "The first step to playing guitar at any level is of course learning how to hold the guitar in a standard way. Some guitars allow for different ways for holding them but as this stage even if your guitar allows for different ways based on its shape stick to the basics before over complicating"
+                text = "A bit of background to guitar: Your picking hand is the hand that plucks/picks the string which is usually your dominant hand in everyday life. Your fretting hand is the hand that presses down the frets which is your non dominant hand."
+                listTips = {["As seen in the picture your guitar rests on your picking hands knee", "The gutar should be placed close to your body for the best posture", "Your picking arm reaches over the top of the guitar body"]}
+                imgURL = {HoldingGuitarImg}/>
+
+                <Course name = "Introduction to Metronome Use" courseType = "Tips"
+                courseDescription = "Learn to improve your timing with metronome practice and how to get the most out of practicing with a metronome"
+                text = "Metronomes can either be physical or online, they are a click track that even the most professional musicians use to stay in timeso its vital knowing how to use one effectively.  The picture above shows the result you get if you type metronome in the search bar"
+                listTips = {["BPM stands for beats per minute", "The standard slow BPM is around 60 BPM", "The standard normal speed is around 80-100 BPM", "A fast BPM is around 100+ BPM"]}
+                imgURL = {metronomeImg}/>
+
+                <Course name = "Pick holding tips" courseType = "Tips"
+                courseDescription = "Top tips on fretting and how the notes can be picked effectively"
+                text = ""
+                listTips = {["The pick should always be held between your index and thumb on picking hand", "It should be placed at the end of your finger on the side", "Then grip the the other side on your pick with your thumb on top"]}
+                imgURL = {pickHoldingImg}/>
+
+                <Course name = "Standard Tuning + String Names" courseType = "Tips"
+                courseDescription = "The string's in letter format and easy ways to remember it + an introduction on tuning your guitar in standard tuning" 
+                text = "Standard tuning is the most common tuning for guitar, used by pretty much every guitar player no matter your level. From the thickest string to the thinnest, the six strings are tuned to E, A, D, G, B and E."
+                listTips = {["The thickest string (6th) is tuned to low E", "The 5th string is tuned to A, the 4th to D, the 3rd to G", "The 2nd string is tuned to B and the thinnest (1st) string is tuned to high E", "A popular way to remember this order is the phrase 'Eddie Ate Dynamite, Good Bye Eddie'", "Use a clip-on tuner or tuning app (GuitarTuna) and adjust each string's tuning peg until the note matches"]}/>
+
+                <Course name = "Open Chords" courseType = 'Chords' numberOfChords = "4" chords = {["G", "D", "Em", "C"]}
+                chordURL = {[GChordImg, DChordImg, EmChordImg, CChordImg]}
+                courseDescription = "The basic 4 chords that make up alot of songs: G, D, Em, C"/>
+
+            {/* <h2>Beginner: Module 1 Practice</h2>
             <Course name = "Metronome Practice"/>
             <Course name = "Spider Exercise"/>
             <Course name = "Chord Practice"/>
-            <Course name = "Song Practice"/>
+            <Course name = "Song Practice"/> */}
         </div><br/>
 
         <div className="module_style">

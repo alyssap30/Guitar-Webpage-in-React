@@ -7,12 +7,12 @@ export function Item(props) {
     // Styles for the amps cards
     const CardStyle = {
         backgroundColor: "white",
-        width: "80%",
+        width: "90%",
         boxSizing: "border-box",
-        maxWidth: "500px",
+        maxWidth: "400px",
         boxShadow: "5px 5px 5px lightgray",
         height: "auto",
-        margin: "10px 10px",
+        margin: "10px 15px",
         padding: "20px",
         textAlign: "center",
         borderRadius: "8px",
@@ -20,7 +20,9 @@ export function Item(props) {
 
     const ImageStyle = {
         width: "80%",
-        height: "60%"};
+        height: "60%",
+        maxHeight: "300px"
+    };
     
     const Learnmorebox = {
         display: showMore ? "block" : "none",
@@ -46,30 +48,22 @@ export function Item(props) {
                 <>
                     {props.spec1 && <p>Power: {props.spec1}</p>}
                     {props.spec2 && <p>Weight: {props.spec2}</p>}
-                    {props.spec3 && <p>Colour: {props.spec3}</p>}
-                    {props.spec4 && <p>Speaker Size: {props.spec4}</p>}
-                    {props.spec5 && <p>Dimensions: {props.spec5}</p>}
-                    {props.spec6 && <p>Channels: {props.spec6}</p>}
-                    {props.spec7 && <p>Effects: {props.spec7}</p>}
-                    {props.spec8 && <p>Footswitch: {props.spec8}</p>}
-                    {props.spec9 && <p>Extra Info: {props.spec9}</p>}
+                    {props.spec3 && <p>Dimensions: {props.spec3}</p>}
+                    {props.spec4 && <p>Channels: {props.spec4}, {props.spec6} Footswitch</p>}
+                    {props.spec5 && <p>Effects: {props.spec5}</p>}
+                    {props.spec7 && <p>Extra Info: {props.spec7}</p>}
                 </>
             );}
         
         if (props.type === "Guitar") {
             return (
                 <>
-                    {props.spec1 && <p>Body: {props.spec1}</p>}
-                    {props.spec2 && <p>Neck: {props.spec2}</p>}
-                    {props.spec3 && <p>Neck Profile: {props.spec3}</p>}
-                    {props.spec4 && <p>Scale: {props.spec4}</p>}
-                    {props.spec5 && <p>{props.spec5} Nut</p>}
-                    {props.spec6 && <p>Fingerboard: {props.spec6}</p>}
-                    {props.spec7 && <p>Colour: {props.spec7}</p>}
-                    {props.spec8 && <p>{props.spec8} Frets</p>}
-                    {props.spec9 && <p>Pickups: {props.spec9}</p>}
-                    {props.spec10 && <p>Controls: {props.spec10}</p>}
-                    {props.spec11 && <p>{props.spec11} Bridge</p>}
+                    {props.spec1 && <p>Body + Neck: {props.spec1} + {props.spec2}</p>}
+                    {props.spec3 && <p>Fingerboard: {props.spec3}, {props.spec4} frets</p>}
+                    {props.spec4 && <p>Body Colour: {props.spec5}</p>}
+                    {props.spec6 && <p>Pickups: {props.spec6}</p>}
+                    {props.spec7 && <p>Controls: {props.spec7}</p>}
+                    {props.spec8 && <p>{props.spec8} Bridge</p>}
                 </>
             )}}
 
@@ -79,15 +73,12 @@ export function Item(props) {
             <img style = {ImageStyle} src={props.ImageSrc} alt={props.ImageAlt}/>
             <h2>{props.name}</h2>
             <p>{props.price}</p>
-            <button className = "itemButton" onClick={handleLearnMore}>Learn More</button>
-            <button className = "itemButton"><a href = {props.buyurl} target="_blank">Buy Now</a></button><br>
-            </br><br></br>
+            <button className = "itemButton" style = {{width: "80%"}} onClick={handleLearnMore}>Learn More</button>
 
             <div style={Learnmorebox}>
                 <h2>{props.name}</h2>
                 {specsDisplay()}
-                <button className='itemButton' onClick={() => setShowMore(false)}>Close</button>
-                <button className='itemButton'><a href = {props.buyurl} target="_blank">Buy Now</a></button>
+                <button className='itemButton' style = {{width: "80%"}} onClick={() => setShowMore(false)}>Close</button>
             </div>
         </div>
     </>
@@ -99,7 +90,6 @@ Item.propTypes = {
     price: PropTypes.string.isRequired,
     ImageSrc: PropTypes.string.isRequired,
     ImageAlt: PropTypes.string,
-    buyurl: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired
 };
 Item.defaultProps = {

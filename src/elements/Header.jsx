@@ -14,7 +14,7 @@ function Header(props) {
 
     const button = {
         padding: "5px 20px",
-        backgroundColor: "rgba(59, 71, 71, 0.55)",
+        backgroundColor: "rgb(59, 71, 71, 0.45)",
         boxShadow: "1px 2px 2px rgb(178, 178, 178)",
         fontSize: "18px",
         color: "white",
@@ -26,8 +26,8 @@ function Header(props) {
 
     return (
         <header className="top-bottom-elements" >
-            <h1>My Guitar Guide</h1>
-            <h3>{props.page}</h3>
+            <h1 style = {{color: "#f4f4f4"}}>Alyssa's Guitar Guide</h1>
+            <h3 style = {{color: "#f4f4f4"}}>{props.page}</h3>
             <hr></hr>
             <nav style = {navbar}>
                 <Link style = {button} to = "/"> Home</Link>
@@ -35,7 +35,6 @@ function Header(props) {
                 <Link style = {button} to = "/Amppage">Amplifiers</Link>
                 <Link style = {button} to = "/CoursePage">Courses</Link>
                 <Link style = {button} to = "/Login">Login</Link>
-        
             </nav>
             <hr/>
         </header>

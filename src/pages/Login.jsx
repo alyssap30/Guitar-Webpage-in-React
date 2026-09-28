@@ -11,8 +11,6 @@ export function Login(){
     const [NewGenre, setNewGenre] = useState("");
     const [color, setColor] = useState ("#9E9E9E");
     
-
-
     function handleChangeName(event) {
         setFullName(event.target.value)};
 
@@ -60,14 +58,17 @@ export function Login(){
 
     const inputfield = {
         borderRadius: "8px",
+        padding: "1%",
+        width: "60%",
         textAlign: "center"
     }
 
     const GenreBox = {
         backgroundColor: "white",
         color: "black",
-        width: "60%",
-        justifyContent: "centre",
+        width: "100%",
+        justifySelf: "centre",
+        display: "block",
         marginBottom: "10px"
     }
 
@@ -111,15 +112,21 @@ export function Login(){
             </select><hr/>
 
             <label>Favourite Genres</label><br/>
-            <input id = "genreinput"
-            type = "text"
-            style={inputfield}
-            value = {NewGenre}
-            onChange={handleSetGenre}/>
+            <select value = {NewGenre} onChange = {handleSetGenre} style={{width: "35%", padding: "1%", borderRadius: "8px"}}>
+                <option value = "Please select a value">Please select a value</option>
+                <option value = "Blues">Blues</option>
+                <option value = "Classical">Classical</option>
+                <option value= "Folk">Folk</option>
+                <option value = "Indie">Indie</option>
+                <option value = "Motown">Motown</option>
+                <option value = "Metal">Metal</option>
+                <option value = "Pop">Pop</option>
+                <option value = "Rock">Rock</option>
+            </select>
             <button className="Button" onClick={AddGenre}>Add</button><br/><hr/>
 
-            <label>Theme:</label>
-            <input type = "color" value = {color} onChange={handleChangeColour} style = {inputfield}/>
+            <label style= {{paddingRight: "1%"}}>Theme:</label>
+            <input type = "color" value = {color} onChange={handleChangeColour} style = {inputfield, {width: "10%"}}/>
         </div><br/>
         </>
     );
