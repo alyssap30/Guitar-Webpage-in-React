@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
-
+import click from "../audio/click.mp3"
 
 export function Metronome(props) {
     const cardStyle = {
@@ -24,7 +24,8 @@ export function Metronome(props) {
         margin: "0 0.5%",
         borderRadius: "50%",
         border: "none",
-        padding: "2% 3%"
+        padding: "2% 3%",
+        cursor: "pointer"
     }
     const playBtn = {
         ...bpmButton,
@@ -35,21 +36,30 @@ export function Metronome(props) {
         backgroundColor: "transparent",
         width: "40%",
     }
-    
 
-    const[bpm, setBPM] = useState(80);
+    const [bpm, setBPM] = useState(80);
+    const [playTxt, setPlayTxt] = useState("PLAY");
+    const [timeout, setTime]= useState("")
+    const clickTrack = new Audio(click)
 
     function handleBPMChange () {
         setBPM(event.target.value)
     }
-
     function increaseBPM(){
         if (bpm < 280) {setBPM(bpm + 1)}
     }
     function decreaseBPM(){
         if (bpm > 20) {setBPM(bpm - 1)}
-    
     }
+    function playMetronome() {
+        if (playTxt === 'PLAY') {
+            setPlayTxt('STOP')
+        }
+        else if (playTxt === 'STOP') {
+            setPlayTxt('PLAY')
+        }
+    }
+    
     return (
         <>
         <div style = {cardStyle}>
@@ -61,7 +71,7 @@ export function Metronome(props) {
             <button style = {bpmButton} onClick={decreaseBPM}>-</button>
             <input style = {slider} type = "range" min = "20" max = "280" step = "1" value={bpm} onChange={handleBPMChange}/>
             <button style = {bpmButton} onClick={increaseBPM}>+</button><br/><br/>
-            <button style = {playBtn}>PLAY</button>
+            <button style = {playBtn} onClick={playMetronome}>{playTxt}</button>
         </div>
         </>
     )

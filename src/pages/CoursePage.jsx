@@ -23,7 +23,7 @@ export function CoursePage() {
     const [isCompleted, setIsCompleted] = useState(true);
     
     const buttonStyle = {
-        width: "40%",
+        width: "47%",
         padding: '1% 0',
         margin: '1%',
         borderRadius: '8px',
@@ -37,7 +37,7 @@ export function CoursePage() {
         document.getElementById(divElement).style.width = '100%';
         if (document.getElementById(divElement).style.display === "none") {
             document.getElementById(divElement).style.display = "inline-block";
-            document.getElementById(buttonElement).textContent = "Close Expansion"}
+            document.getElementById(buttonElement).textContent = "Close Content"}
         else {
             document.getElementById(divElement).style.display = "none";
             document.getElementById(buttonElement).textContent = "View Content"
@@ -55,7 +55,7 @@ export function CoursePage() {
             <h2>Beginner: Module 1</h2>
             <h3>{percentageComplete1}% Complete</h3>
             <button id = "course1button" onClick={() => {expandWindow("course1", "course1button")}} style = {buttonStyle}>View Content</button>
-            <button style = {buttonStyle}>View Practice Routine</button>
+            <button style = {buttonStyle}>View Practice</button>
         </div>
             <div id = "course1" style = {{display: "none"}}>
 
@@ -102,7 +102,7 @@ export function CoursePage() {
             <h2>Beginner: Module 2</h2>
             <h3>{percentageComplete2}% Complete</h3>
             <button id = "course2button" onClick={() => {expandWindow("course2", "course2button")}} style = {buttonStyle}>View Content</button>
-            <button style = {buttonStyle}>View Practice Routine</button>
+            <button style = {buttonStyle}>View Practice</button>
         </div>
             <div id = "course2" style = {{display: "none"}}>
                 <Course name = "Power Chords"
@@ -123,7 +123,7 @@ export function CoursePage() {
             <h2>Transition from Beginner to Intermediate</h2>
             <h3>{percentageComplete3}% Complete</h3>
             <button id = "course3button" onClick={() => {expandWindow("course3", "course3button")}} style={buttonStyle}>View Content</button>
-            <button style = {buttonStyle}>View Practice Routine</button>
+            <button style = {buttonStyle}>View Practice</button>
         </div>
             <div id = "course3" style = {{display: "none"}}>
                 <Course name = "Introduction to Barre Chords"
@@ -143,7 +143,7 @@ export function CoursePage() {
             <h2>Intermediate: Module 1</h2>
             <h3>{percentageComplete4}% Complete</h3>
             <button id = "course4button" onClick={() => {expandWindow("course4", "course4button")}} style={buttonStyle}>View Content</button>
-            <button style = {buttonStyle}>View Practice Routine</button>
+            <button style = {buttonStyle}>View Practice</button>
         </div>
             <div id = "course4" style = {{display: "none"}}>
                 <Course name = "Suspended Chords"/>
@@ -163,7 +163,7 @@ export function CoursePage() {
             <h2>Intermediate: Module 2</h2>
             <h3>{percentageComplete5}% Complete</h3>
             <button id = "course5button" onClick={() => {expandWindow("course5", "course5button")}} style={buttonStyle}>View Content</button>
-            <button style = {buttonStyle}>View Practice Routine</button>
+            <button style = {buttonStyle}>View Practice</button>
         </div>
             <div id = "course5" style = {{display: "none"}}>
                 <Course name = "Galloping Rhythms"/>
@@ -178,7 +178,7 @@ export function CoursePage() {
             <h2>Transition from Intermediate to Advanced</h2>
             <h3>{percentageComplete5}% Complete</h3>
             <button id = "course6button" onClick={() => {expandWindow("course6", "course6button")}} style={buttonStyle}>View Content</button>
-            <button style = {buttonStyle}>View Practice Routine</button>
+            <button style = {buttonStyle}>View Practice</button>
         </div>
             <div id = "course6" style = {{display: "none"}}>
                 <Course name = "9th Chords"/>
@@ -197,7 +197,7 @@ export function CoursePage() {
             <h2>Advanced: Module 1</h2>
             <h3>{percentageComplete6}% Complete</h3>
             <button id = "course7button" onClick={() => {expandWindow("course7", "course7button")}} style={buttonStyle}>View Content</button>
-            <button style = {buttonStyle}>View Practice Routine</button>
+            <button style = {buttonStyle}>View Practice</button>
         </div>
             <div id = "course7" style = {{display: "none"}}>
                 <Course name = "6/9 Chords"/>
@@ -212,7 +212,7 @@ export function CoursePage() {
             <h2>Advanced Module 2</h2>
             <h3>{percentageComplete7}% Complete</h3>
             <button id = "course8button" onClick={() => {expandWindow("course8", "course8button")}} style={buttonStyle}>View Content</button>
-            <button style = {buttonStyle}>View Practice Routine</button>
+            <button style = {buttonStyle}>View Practice</button>
         </div>
             <div id = "course8" style = {{display: "none"}}>
                 <Course name = "Mode to chord relationships"/>
