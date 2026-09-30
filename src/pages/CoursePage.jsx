@@ -5,7 +5,7 @@ import GChordImg from "../images/chordDiagrams/G-Chord.png"
 import DChordImg from "../images/chordDiagrams/D-Chord.png"
 import EmChordImg from "../images/chordDiagrams/Em-Chord.png"
 import CChordImg from "../images/chordDiagrams/C-Chord.png"
-import HoldingGuitarImg from "../images/Tips Images/HoldingGuitar.png"
+import HoldingGuitarImg from "../images/Tips Images/HoldingGuitar.jpeg"
 import metronomeImg from "../images/Tips Images/metronome.png"
 import pickHoldingImg from "../images/Tips Images/HoldingPick.png"
 
@@ -23,7 +23,7 @@ export function CoursePage() {
     const [isCompleted, setIsCompleted] = useState(true);
     
     const buttonStyle = {
-        width: "60%",
+        width: "40%",
         padding: '1% 0',
         margin: '1%',
         borderRadius: '8px',
@@ -54,21 +54,25 @@ export function CoursePage() {
         <div className="module_style">
             <h2>Beginner: Module 1</h2>
             <h3>{percentageComplete1}% Complete</h3>
-            <button id = "course1button" onClick={() => {expandWindow("course1", "course1button")}} style = {buttonStyle}>View Content</button><br/>
+            <button id = "course1button" onClick={() => {expandWindow("course1", "course1button")}} style = {buttonStyle}>View Content</button>
+            <button style = {buttonStyle}>View Practice Routine</button>
         </div>
             <div id = "course1" style = {{display: "none"}}>
 
-                <Course name = "Picking vs Fretting hand introduction"/>
+                <Course name = "Picking vs Fretting hand Introduction" courseType = "Tips"
+                courseDescription = "Learn which hand you should use for picking and fretting. Explanation of the terms to make the rest of the guide easier"
+                text = "Your picking hand’s purpose is to hold the pick and pluck the strings. Your fretting hand presses down/frets on the the notes that your picking hand will play"
+                listTips = {["Your picking hand is your dominant hand", "For example, if you're right handed it’d be your right hand. If you’re left handed it’d be your left hand", "Your fretting hand is your non-dominant hand", "For example, if you're right handed it’d be your left hand. If you’re left handed it’d be your right hand"]}/>
 
                 <Course name = "How to Hold your Guitar" courseType = "Tips"
                 courseDescription = "The first step to playing guitar at any level is of course learning how to hold the guitar in a standard way. Some guitars allow for different ways for holding them but as this stage even if your guitar allows for different ways based on its shape stick to the basics before over complicating"
-                text = "A bit of background to guitar: Your picking hand is the hand that plucks/picks the string which is usually your dominant hand in everyday life. Your fretting hand is the hand that presses down the frets which is your non dominant hand."
+                text = ""
                 listTips = {["As seen in the picture your guitar rests on your picking hands knee", "The gutar should be placed close to your body for the best posture", "Your picking arm reaches over the top of the guitar body"]}
                 imgURL = {HoldingGuitarImg}/>
 
-                <Course name = "Introduction to Metronome Use" courseType = "Tips"
+                <Course name = "Introduction to Metronome Use" courseType = "Metronome"
                 courseDescription = "Learn to improve your timing with metronome practice and how to get the most out of practicing with a metronome"
-                text = "Metronomes can either be physical or online, they are a click track that even the most professional musicians use to stay in timeso its vital knowing how to use one effectively.  The picture above shows the result you get if you type metronome in the search bar"
+                text = "Metronomes can either be physical or online, they are a click track that even the most professional musicians use to stay in time so it's vital knowing how to use one effectively. I have attached a metronome on the previous slide that can be used alongside your practice"
                 listTips = {["BPM stands for beats per minute", "The standard slow BPM is around 60 BPM", "The standard normal speed is around 80-100 BPM", "A fast BPM is around 100+ BPM"]}
                 imgURL = {metronomeImg}/>
 
@@ -76,7 +80,7 @@ export function CoursePage() {
                 courseDescription = "Top tips on fretting and how the notes can be picked effectively"
                 text = ""
                 listTips = {["The pick should always be held between your index and thumb on picking hand", "It should be placed at the end of your finger on the side", "Then grip the the other side on your pick with your thumb on top"]}
-                imgURL = {pickHoldingImg}/>
+                />
 
                 <Course name = "Standard Tuning + String Names" courseType = "Tips"
                 courseDescription = "The string's in letter format and easy ways to remember it + an introduction on tuning your guitar in standard tuning" 
@@ -97,7 +101,8 @@ export function CoursePage() {
         <div className="module_style">
             <h2>Beginner: Module 2</h2>
             <h3>{percentageComplete2}% Complete</h3>
-            <button id = "course2button" onClick={() => {expandWindow("course2", "course2button")}} style = {buttonStyle}>View Content</button><br/>
+            <button id = "course2button" onClick={() => {expandWindow("course2", "course2button")}} style = {buttonStyle}>View Content</button>
+            <button style = {buttonStyle}>View Practice Routine</button>
         </div>
             <div id = "course2" style = {{display: "none"}}>
                 <Course name = "Power Chords"
@@ -117,7 +122,8 @@ export function CoursePage() {
         <div className="module_style">
             <h2>Transition from Beginner to Intermediate</h2>
             <h3>{percentageComplete3}% Complete</h3>
-            <button id = "course3button" onClick={() => {expandWindow("course3", "course3button")}} style={buttonStyle}>View Content</button><br/>
+            <button id = "course3button" onClick={() => {expandWindow("course3", "course3button")}} style={buttonStyle}>View Content</button>
+            <button style = {buttonStyle}>View Practice Routine</button>
         </div>
             <div id = "course3" style = {{display: "none"}}>
                 <Course name = "Introduction to Barre Chords"
@@ -136,7 +142,8 @@ export function CoursePage() {
         <div className="module_style">
             <h2>Intermediate: Module 1</h2>
             <h3>{percentageComplete4}% Complete</h3>
-            <button id = "course4button" onClick={() => {expandWindow("course4", "course4button")}} style={buttonStyle}>View Content</button><br/>
+            <button id = "course4button" onClick={() => {expandWindow("course4", "course4button")}} style={buttonStyle}>View Content</button>
+            <button style = {buttonStyle}>View Practice Routine</button>
         </div>
             <div id = "course4" style = {{display: "none"}}>
                 <Course name = "Suspended Chords"/>
@@ -155,7 +162,8 @@ export function CoursePage() {
         <div className="module_style">
             <h2>Intermediate: Module 2</h2>
             <h3>{percentageComplete5}% Complete</h3>
-            <button id = "course5button" onClick={() => {expandWindow("course5", "course5button")}} style={buttonStyle}>View Content</button><br/>
+            <button id = "course5button" onClick={() => {expandWindow("course5", "course5button")}} style={buttonStyle}>View Content</button>
+            <button style = {buttonStyle}>View Practice Routine</button>
         </div>
             <div id = "course5" style = {{display: "none"}}>
                 <Course name = "Galloping Rhythms"/>
@@ -169,7 +177,8 @@ export function CoursePage() {
         <div className="module_style">
             <h2>Transition from Intermediate to Advanced</h2>
             <h3>{percentageComplete5}% Complete</h3>
-            <button id = "course6button" onClick={() => {expandWindow("course6", "course6button")}} style={buttonStyle}>View Content</button><br/>
+            <button id = "course6button" onClick={() => {expandWindow("course6", "course6button")}} style={buttonStyle}>View Content</button>
+            <button style = {buttonStyle}>View Practice Routine</button>
         </div>
             <div id = "course6" style = {{display: "none"}}>
                 <Course name = "9th Chords"/>
@@ -187,7 +196,8 @@ export function CoursePage() {
         <div className="module_style">
             <h2>Advanced: Module 1</h2>
             <h3>{percentageComplete6}% Complete</h3>
-            <button id = "course7button" onClick={() => {expandWindow("course7", "course7button")}} style={buttonStyle}>View Content</button><br/>
+            <button id = "course7button" onClick={() => {expandWindow("course7", "course7button")}} style={buttonStyle}>View Content</button>
+            <button style = {buttonStyle}>View Practice Routine</button>
         </div>
             <div id = "course7" style = {{display: "none"}}>
                 <Course name = "6/9 Chords"/>
@@ -201,7 +211,8 @@ export function CoursePage() {
         <div className="module_style">
             <h2>Advanced Module 2</h2>
             <h3>{percentageComplete7}% Complete</h3>
-            <button id = "course8button" onClick={() => {expandWindow("course8", "course8button")}} style={buttonStyle}>View Content</button><br/>
+            <button id = "course8button" onClick={() => {expandWindow("course8", "course8button")}} style={buttonStyle}>View Content</button>
+            <button style = {buttonStyle}>View Practice Routine</button>
         </div>
             <div id = "course8" style = {{display: "none"}}>
                 <Course name = "Mode to chord relationships"/>

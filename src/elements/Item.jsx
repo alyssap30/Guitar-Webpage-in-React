@@ -32,10 +32,10 @@ export function Item(props) {
         top: "50%",
         left: "50%",
         width: "70%",
-        maxWidth: "400px",
+        maxWidth: "500px",
         transform: "translate(-50%, -50%)",
         padding: "20px",
-        backgroundColor: "#f5f5f5",
+        backgroundColor: "lightgray",
         borderRadius: "6px"};
 
     // Learn More buttons

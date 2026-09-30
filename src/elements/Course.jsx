@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Metronome } from "../elements/Metronome";
 import React, { useState } from "react";
 
 
@@ -40,7 +41,8 @@ export function Course(props) {
     };
     const LearnMoreStyle = {
         ...CardStyle,
-        height: "40%",
+        margin: "0 2%",
+        backgroundColor: "lightgray",
         maxWidth: "550px",
         padding: "20px",
         position: "fixed",
@@ -48,8 +50,8 @@ export function Course(props) {
         left: "49.5%",
         transform: "translate(-50%, -50%)",
         zIndex: "1000",
-        display: showMore ? "inline-block" : "none"};
-
+        display: showMore ? "inline-block" : "none"
+    };
     const CourseContentStyle = {
         ...LearnMoreStyle,
         display: viewContent ? "flex" : "none",
@@ -62,13 +64,14 @@ export function Course(props) {
     const middleContent = {
         flex: 1, 
         overflowY: "auto",
-        margin: "0",
+        margin: "0 2%",
         flexDirection: "column",
-        minHeight: "130px"
     }
     const stepToStepBox = {
         ...middleContent,
+        textAlign: "left",
         display: viewSteps ? "flex" : "none"
+    
     };
     const summaryBox = {
         ...middleContent,
@@ -78,7 +81,6 @@ export function Course(props) {
     const ExtraContentStyle = {
         backgroundColor: "white",
         width: "90%",
-        height: "40%",
         boxSizing: "border-box",
         maxWidth: "500px",
         maxHeight: "95vh",
@@ -103,6 +105,10 @@ export function Course(props) {
         color: 'white',
         backgroundColor: 'gray'
     }
+    const chordBtn = {
+        ...buttonStyle, 
+        width: "20%"
+    }
 
     const imageStyle = {
         width: "90%",
@@ -112,7 +118,6 @@ export function Course(props) {
     const progressTxt = {
         color: progressTxtColor
     }
-
     function preventWindowStacking() {
         setShowMore(false);
         setviewContent(false);
@@ -149,7 +154,6 @@ export function Course(props) {
             setViewSummary(true);
             setNextBtnContent("Mark as Complete");
             setBackBtnContent('Back')
-
         }
         else if (nextButtonContent == "Mark as Complete") {
             setViewSteps(true);
@@ -176,16 +180,16 @@ export function Course(props) {
     if (props.courseType === 'Chords') {
         for (let i = 0; i < props.numberOfChords; i++) {
             chordButtonArray.push (
-                <button style = {buttonStyle} 
+                <button style = {chordBtn} 
                 onClick={() => {
                     setActiveDesIndex(i);
                     setActiveChordIndex(i);
                     openExtraContent()}}>{props.chords[i]} Chord</button>
             )}}
-    else if (props.courseType === 'Tips' && props.listTips.length != 0) {
+    else if ((props.courseType === 'Tips' || props.courseType === 'Metronome') && props.listTips.length != 0 ) {
         for (let i = 0; i < props.listTips.length; i++) {
             tipsArray.push (
-                <li key ={`tip=${i}`}>{props.listTips[i]}</li>
+                <li style = {{margin: "2% 0 "}} key ={`tip=${i}`}>{props.listTips[i]}</li>
             )
         }
     }
@@ -195,12 +199,14 @@ export function Course(props) {
         if (props.courseType === 'Chords') {
             return (
                 <>
-                    {chordButtonArray}<br/><br/>
+                    <div style={{display: 'flex', justifyContent: "center", flexWrap: 'wrap', rowGap: '4px', marginBottom: '10px' }}>
+                    {chordButtonArray}
+                    </div>
                     <h3>How to Read Chord Diagrams</h3>
                     <ol>
                         <li>From left to right the vertical lines represent strings in the order: low E, A, D, G, B and high E</li>
-                        <li>Each horizontal line represents the fret with the thickest line being fret 0 (open string) and the filrst line being fret 1, the second horizonal line being fret 2 ect</li>
-                        <li>The circles on the verticle lines represent your finger position</li>
+                        <li style = {{margin: "2% 0"}}>Each horizontal line represents the fret with the thickest line being fret 0 (open string) and the filrst line being fret 1, the second horizonal line being fret 2 ect</li>
+                        <li style = {{margin: "2% 0"}}>The circles on the verticle lines represent your finger position</li>
                         <li>The numbers in the circle state which finger to use with a number. E.g if 1 in the circle you would use your index finger for fretting that note</li>
                     </ol>
                 </>);
@@ -211,6 +217,15 @@ export function Course(props) {
                 <img style = {imageStyle} src = {props.imgURL}/>
                 <ol>{tipsArray}</ol>
                 </>);
+        }
+        else if (props.courseType === 'Metronome') {
+            return (
+                <>
+                <Metronome/>
+                <ol>{tipsArray}</ol>
+                </>
+            )
+            
         }
     }
 

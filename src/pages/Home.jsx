@@ -26,8 +26,7 @@ export function Home() {
         border: "0.5px dashed",
         height: "3vh",
         fontWeight: "bold",
-        fontSize: "medium",
-
+        fontSize: "medium", 
     }
     
     const [introMod, setIntromod] = useState("");
@@ -70,6 +69,7 @@ export function Home() {
     return (
         <>
             <Header page="Home Page" />
+
             <h2>ABOUT ME + THE PROJECT</h2>
             <div style = {CardStyle}>
                 <select style = {input} value = {introMod} onChange={handleIntro}>
@@ -78,7 +78,6 @@ export function Home() {
                     <option value= "challenge">The Issue I Faced with my playing</option>
                     <option value= "why">Why I Started this Project</option>
                 </select>
-
                 {introContentDisplay()}
 
             </div>

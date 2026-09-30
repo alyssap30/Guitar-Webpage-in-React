@@ -7,10 +7,6 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3 {
-  color: #1F2937;
-}
-
 .top-bottom-elements {
     background-color: rgb(124, 198, 198);
     color: #f4f4f4;

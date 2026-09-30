@@ -42,21 +42,9 @@ export function GuitarPage() {
             spec6 = "Rosewood" spec7 = "Satin Black" spec8 = "24" spec9 = "2 Hils Active Humbuckers" 
             spec10 = "1 Volume, 1 Tone, 3-Way Switch" spec11 = "Alchemy Headless Tremolo"/>
 
-            <Item name= "Fender Telecaster" price="£700" type = "Guitar"
-            ImageSrc = "https://rvb-img.reverb.com/image/upload/s--bJ5OwHUj--/t_card-square/v1529421711/r8befer5k6tuhp1fhts0.png"
-            ImageAlt = "Yellow Telecaster Guitar"
-            buyurl = "https://tinyurl.com/48zuxkvr"
-            spec1 = "Ash" spec2 = "Maple" spec3 = "Modern C" spec4 = "648mm" spec5 = "42mm Synthetic Bone" 
-            spec6 = "Maple" spec7 = "Butterscotch Blonde" spec8 = "22" spec9 = "2 Single-Coil Pickups" 
-            spec10 = "1 Master Volume, 1 Master Tone, 3-Way Switch" spec11 = "6-Saddle String-Through-Body Hardtail"/>
+            <Item/>
 
-            <Item name= "Fender Mustang" price="£600" type = "Guitar"
-            ImageSrc = "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_59/595119/19262898_800.jpg"
-            ImageAlt = "Blue Mustang Guitar"
-            buyurl= "https://tinyurl.com/36fdfbkx"
-            spec1 = "Alder" spec2 = "Maple" spec3 = "Modern C" spec4 = "609mm" spec5 = "42mm Synthetic Bone" 
-            spec6 = "Rosewood" spec7 = "Aquatone Blue" spec8 = "22" spec9 = "2 Single-Coil Pickups" 
-            spec10 = "1 Master Volume, 1 Master Tone, 3-Way Switch" spec11 = "6-Saddle String-Through-Body Hardtail"/>
+            <Item/>
 
         <div id="ibanez">
           <h2>Ibanez</h2>
@@ -69,19 +57,12 @@ export function GuitarPage() {
           spec3 = "Jatoba" spec4 = "24" spec5 = "White"  spec6 = "2 Quantum Humbuckers, 1 Quantum Single Coil" 
           spec7 = "1 Master Volume, 1 Tone, 5-Way Switch" spec8 = "Standard double-locking tremolo Floyd Rose"/>
 
-          <Item name = "Ibanez TOD10-MM Tim Henson" price = "£1400"
-          ImageSrc = "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_59/597438/19349671_800.jpg"
+          <Item name = "Ibanez GRX70QA" price = "£170 - £200" type = "Guitar"
+          ImageSrc = "https://r2.gear4music.com/media/69/690995/600/preview.jpg"
           ImageAlt = "Ibanez TOD10-MM Tim Henson guitar"
-          spec1 = "Basswood" spec2 = "Bolt-on Maple" spec3 = "AZ Oval C" spec4 = "648mm" spec5 = "Graph tech" 
-          spec6 = "Ebony" spec7 = "Metallic Mauve" spec8 = "24" spec9 = "2 Fishman Fluence Tim Henson Signature Series" 
-          spec10 = "Volume and tone control with push/pull function" spec11 = ""/>
-
-          <Item name = "Ibanez ICHI10-VWM" price = "£875" type = "Guitar"
-          ImageSrc = "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_52/523689/19282411_800.jpg"
-          ImageAlt = "Headless Ibanez ICHI10-VWM guitar"
-          spec1 = "Nyatoh" spec2 = "Bolt-on Maple" spec3 = "Wizard C" spec4 = "648mm" spec5 = "Plastic" 
-          spec6 = "Roasted birdseye maple" spec7 = "Vintage White Matte" spec8 = "24" spec9 = "3 S1 single coils" 
-          spec10 = "Volume and tone controls" spec11 = "Ibanez Mono-Tune"/>
+          spec1 = "Poplar" spec2 = "Bolt-on Maple" spec3 = "Rosewood" 
+          spec4 = "22" spec5 = "Transparent Blue Burst" spec6 = "2 Infinity R Humbucker, 1 Infinity RS Single-Coil" 
+          spec7 = "Master Volume, Master Tone, 5-Way Blade Switch" spec8 = "FAT-6 Tremolo"/>
         </div>
         <br/>
       
